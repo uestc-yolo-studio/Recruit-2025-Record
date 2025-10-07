@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.petadoption.Mapper.PetMapper">
+    <select id="getAllPets" resultType="com.petadoption.entities.Pet">
+        select * from pet;
+    </select>
+    <select id="getAvailablePets" resultType="com.petadoption.entities.Pet">
+        SELECT * FROM pet WHERE adopt_status = false;
+    </select>
+    <delete id="removePet" parameterType="int">
+        DELETE FROM pet WHERE id = #{id}
+    </delete>
+    <insert id="addPet" parameterType="com.petadoption.entities.Pet">
+        INSERT INTO pet (name, species, age)
+        VALUES (#{name}, #{species}, #{age})
+    </insert>
+    <select id="getPetById" parameterType="int" resultType="com.petadoption.entities.Pet">
+        SELECT * FROM pet WHERE id = #{id}
+    </select>
+    <update id="updatePet" parameterType="com.petadoption.entities.Pet">
+        UPDATE pet
+        SET name = #{name}, species = #{species}, age = #{age}
+        WHERE id = #{id}
+    </update>
+    <update id="updateStatus" parameterType="com.petadoption.entities.Pet">
+        UPDATE pet
+        SET adopt_status = #{adopt_status}
+        WHERE id = #{id}
+    </update>
+</mapper>

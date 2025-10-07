@@ -1,0 +1,102 @@
+2025-10-07 14:06:24 [main] DEBUG c.p.Mapper.PetMapper.addPet - ==>  Preparing: INSERT INTO pet (name, species, age) VALUES (?, ?, ?)
+2025-10-07 14:06:24 [main] DEBUG c.p.Mapper.PetMapper.addPet - ==> Parameters: skkr(String), Orange(String), 5(Integer)
+2025-10-07 14:06:24 [main] DEBUG c.p.Mapper.PetMapper.addPet - <==    Updates: 1
+2025-10-07 14:08:02 [main] DEBUG c.p.Mapper.PetMapper.getPetById - ==>  Preparing: SELECT * FROM pet WHERE id = ?
+2025-10-07 14:08:02 [main] DEBUG c.p.Mapper.PetMapper.getPetById - ==> Parameters: 10(Integer)
+2025-10-07 14:08:02 [main] DEBUG c.p.Mapper.PetMapper.getPetById - <==      Total: 1
+2025-10-07 14:08:02 [main] DEBUG c.p.Mapper.PetMapper.removePet - ==>  Preparing: DELETE FROM pet WHERE id = ?
+2025-10-07 14:08:02 [main] DEBUG c.p.Mapper.PetMapper.removePet - ==> Parameters: 10(Integer)
+2025-10-07 14:08:02 [main] DEBUG c.p.Mapper.PetMapper.removePet - <==    Updates: 1
+2025-10-07 14:08:12 [main] DEBUG c.p.Mapper.PetMapper.getPetById - ==>  Preparing: SELECT * FROM pet WHERE id = ?
+2025-10-07 14:08:12 [main] DEBUG c.p.Mapper.PetMapper.getPetById - ==> Parameters: 11(Integer)
+2025-10-07 14:08:12 [main] DEBUG c.p.Mapper.PetMapper.getPetById - <==      Total: 1
+2025-10-07 14:08:22 [main] DEBUG c.p.Mapper.PetMapper.updatePet - ==>  Preparing: UPDATE pet SET name = ?, species = ?, age = ? WHERE id = ?
+2025-10-07 14:08:22 [main] DEBUG c.p.Mapper.PetMapper.updatePet - ==> Parameters: skrillex(String), Orange(String), 5(Integer), 11(Integer)
+2025-10-07 14:08:22 [main] DEBUG c.p.Mapper.PetMapper.updatePet - <==    Updates: 1
+2025-10-07 14:09:46 [main] DEBUG c.p.Mapper.PetMapper.getAllPets - ==>  Preparing: select * from pet;
+2025-10-07 14:09:46 [main] DEBUG c.p.Mapper.PetMapper.getAllPets - ==> Parameters: 
+2025-10-07 14:09:46 [main] DEBUG c.p.Mapper.PetMapper.getAllPets - <==      Total: 6
+2025-10-07 14:15:42 [main] DEBUG c.p.Mapper.PetMapper.getAllPets - ==>  Preparing: select * from pet;
+2025-10-07 14:15:42 [main] DEBUG c.p.Mapper.PetMapper.getAllPets - ==> Parameters: 
+2025-10-07 14:15:42 [main] DEBUG c.p.Mapper.PetMapper.getAllPets - <==      Total: 6
+2025-10-07 14:19:33 [main] DEBUG c.p.Mapper.AdopterMapper.addAdopter - ==>  Preparing: INSERT INTO adopter (name, phone,address,password) VALUES (?, ?,?,?)
+2025-10-07 14:19:33 [main] DEBUG c.p.Mapper.AdopterMapper.addAdopter - ==> Parameters: xiemiao(String), 133738738(String), xin3(String), 123456(String)
+2025-10-07 14:19:33 [main] DEBUG c.p.Mapper.AdopterMapper.addAdopter - <==    Updates: 1
+2025-10-07 14:25:07 [main] DEBUG c.p.Mapper.AdopterMapper.addAdopter - ==>  Preparing: INSERT INTO adopter (name, phone,address,password) VALUES (?, ?,?,?)
+2025-10-07 14:25:07 [main] DEBUG c.p.Mapper.AdopterMapper.addAdopter - ==> Parameters: xiexie(String), 12e394328(String), cd(String), 111111(String)
+2025-10-07 14:25:07 [main] DEBUG c.p.Mapper.AdopterMapper.addAdopter - <==    Updates: 1
+2025-10-07 14:46:43 [main] DEBUG c.p.Mapper.AdopterMapper.addAdopter - ==>  Preparing: INSERT INTO adopter (name, phone,address,password) VALUES (?, ?,?,?)
+2025-10-07 14:46:43 [main] DEBUG c.p.Mapper.AdopterMapper.addAdopter - ==> Parameters: xie(String), 13345678901(String), 成都(String), 1234556(String)
+2025-10-07 14:46:43 [main] DEBUG c.p.Mapper.AdopterMapper.addAdopter - <==    Updates: 1
+2025-10-07 14:53:06 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - ==>  Preparing: SELECT * FROM adopter WHERE id = ?
+2025-10-07 14:53:06 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - ==> Parameters: 5(Integer)
+2025-10-07 14:53:07 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - <==      Total: 1
+2025-10-07 14:53:39 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - ==>  Preparing: SELECT * FROM adopter WHERE id = ?
+2025-10-07 14:53:39 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - ==> Parameters: 5(Integer)
+2025-10-07 14:53:39 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - <==      Total: 1
+2025-10-07 14:54:01 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - ==>  Preparing: SELECT * FROM adopter WHERE id = ?
+2025-10-07 14:54:01 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - ==> Parameters: 5(Integer)
+2025-10-07 14:54:01 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - <==      Total: 1
+2025-10-07 14:54:22 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - ==>  Preparing: SELECT * FROM adopter WHERE id = ?
+2025-10-07 14:54:22 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - ==> Parameters: 5(Integer)
+2025-10-07 14:54:22 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - <==      Total: 1
+2025-10-07 14:56:29 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - ==>  Preparing: SELECT * FROM adopter WHERE id = ?
+2025-10-07 14:56:29 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - ==> Parameters: 5(Integer)
+2025-10-07 14:56:29 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - <==      Total: 1
+2025-10-07 14:56:35 [main] DEBUG c.p.M.AdopterMapper.updateAdopter - ==>  Preparing: UPDATE adopter SET name = ?, phone = ?, address = ?, password = ? WHERE id = ?
+2025-10-07 14:56:35 [main] DEBUG c.p.M.AdopterMapper.updateAdopter - ==> Parameters: xie(String), 13345678901(String), 成都(String), 1234556(String), 5(Integer)
+2025-10-07 14:56:35 [main] DEBUG c.p.M.AdopterMapper.updateAdopter - <==    Updates: 1
+2025-10-07 14:57:07 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - ==>  Preparing: SELECT * FROM adopter WHERE id = ?
+2025-10-07 14:57:07 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - ==> Parameters: 5(Integer)
+2025-10-07 14:57:07 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - <==      Total: 1
+2025-10-07 14:58:38 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - ==>  Preparing: SELECT * FROM adopter WHERE id = ?
+2025-10-07 14:58:38 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - ==> Parameters: 5(Integer)
+2025-10-07 14:58:38 [main] DEBUG c.p.M.AdopterMapper.getAdopterById - <==      Total: 1
+2025-10-07 14:58:48 [main] DEBUG c.p.M.AdopterMapper.updateAdopter - ==>  Preparing: UPDATE adopter SET name = ?, phone = ?, address = ?, password = ? WHERE id = ?
+2025-10-07 14:58:48 [main] DEBUG c.p.M.AdopterMapper.updateAdopter - ==> Parameters: xie(String), 13345678901(String), 成都(String), 122334(String), 5(Integer)
+2025-10-07 14:58:48 [main] DEBUG c.p.M.AdopterMapper.updateAdopter - <==    Updates: 1
+2025-10-07 14:59:56 [main] DEBUG c.p.M.AdopterMapper.getAllAdopters - ==>  Preparing: SELECT * FROM adopter;
+2025-10-07 14:59:56 [main] DEBUG c.p.M.AdopterMapper.getAllAdopters - ==> Parameters: 
+2025-10-07 14:59:56 [main] DEBUG c.p.M.AdopterMapper.getAllAdopters - <==      Total: 3
+2025-10-07 15:00:45 [main] DEBUG c.p.M.A.getAllAdoptionRecords - ==>  Preparing: select * from adoption_record;
+2025-10-07 15:00:45 [main] DEBUG c.p.M.A.getAllAdoptionRecords - ==> Parameters: 
+2025-10-07 15:00:45 [main] DEBUG c.p.M.A.getAllAdoptionRecords - <==      Total: 0
+2025-10-07 15:01:02 [main] DEBUG c.p.M.AdoptionRecordMapper.adoptPet - ==>  Preparing: INSERT INTO adoption_record (adopter_id, pet_id,status) VALUES (?, ?, ?)
+2025-10-07 15:01:02 [main] DEBUG c.p.M.AdoptionRecordMapper.adoptPet - ==> Parameters: 5(Integer), 11(Integer), APPLYING(String)
+2025-10-07 15:01:02 [main] DEBUG c.p.M.AdoptionRecordMapper.adoptPet - <==    Updates: 1
+2025-10-07 15:01:49 [main] DEBUG c.p.M.A.getAllAdoptionRecords - ==>  Preparing: select * from adoption_record;
+2025-10-07 15:01:49 [main] DEBUG c.p.M.A.getAllAdoptionRecords - ==> Parameters: 
+2025-10-07 15:01:49 [main] DEBUG c.p.M.A.getAllAdoptionRecords - <==      Total: 1
+2025-10-07 15:02:34 [main] DEBUG c.p.M.A.getRecordById - ==>  Preparing: SELECT * FROM adoption_record WHERE id = ?
+2025-10-07 15:02:34 [main] DEBUG c.p.M.A.getRecordById - ==> Parameters: 1(Integer)
+2025-10-07 15:02:34 [main] DEBUG c.p.M.A.getRecordById - <==      Total: 0
+2025-10-07 15:02:43 [main] DEBUG c.p.M.A.getRecordById - ==>  Preparing: SELECT * FROM adoption_record WHERE id = ?
+2025-10-07 15:02:43 [main] DEBUG c.p.M.A.getRecordById - ==> Parameters: 2(Integer)
+2025-10-07 15:02:43 [main] DEBUG c.p.M.A.getRecordById - <==      Total: 1
+2025-10-07 15:02:49 [main] DEBUG c.p.Mapper.PetMapper.getPetById - ==>  Preparing: SELECT * FROM pet WHERE id = ?
+2025-10-07 15:02:49 [main] DEBUG c.p.Mapper.PetMapper.getPetById - ==> Parameters: 11(Integer)
+2025-10-07 15:02:49 [main] DEBUG c.p.Mapper.PetMapper.getPetById - <==      Total: 1
+2025-10-07 15:02:49 [main] DEBUG c.p.Mapper.PetMapper.updateStatus - ==>  Preparing: UPDATE pet SET adopt_status = ? WHERE id = ?
+2025-10-07 15:02:49 [main] DEBUG c.p.Mapper.PetMapper.updateStatus - ==> Parameters: true(Boolean), 11(Integer)
+2025-10-07 15:02:49 [main] DEBUG c.p.Mapper.PetMapper.updateStatus - <==    Updates: 1
+2025-10-07 15:02:49 [main] DEBUG c.p.M.A.updateRecord - ==>  Preparing: UPDATE adoption_record SET status = ? WHERE id = ?
+2025-10-07 15:02:49 [main] DEBUG c.p.M.A.updateRecord - ==> Parameters: COMPLETED(String), 2(Integer)
+2025-10-07 15:02:49 [main] DEBUG c.p.M.A.updateRecord - <==    Updates: 1
+2025-10-07 15:03:50 [main] DEBUG c.p.M.A.getAllAdoptionRecords - ==>  Preparing: select * from adoption_record;
+2025-10-07 15:03:50 [main] DEBUG c.p.M.A.getAllAdoptionRecords - ==> Parameters: 
+2025-10-07 15:03:50 [main] DEBUG c.p.M.A.getAllAdoptionRecords - <==      Total: 1
+2025-10-07 15:03:59 [main] DEBUG c.p.M.A.getAdoptionRecordsByPet - ==>  Preparing: SELECT * FROM adoption_record WHERE pet_id = ?
+2025-10-07 15:03:59 [main] DEBUG c.p.M.A.getAdoptionRecordsByPet - ==> Parameters: 11(Integer)
+2025-10-07 15:03:59 [main] DEBUG c.p.M.A.getAdoptionRecordsByPet - <==      Total: 1
+2025-10-07 15:06:14 [main] DEBUG c.p.M.A.getAllAdoptionRecords - ==>  Preparing: select * from adoption_record;
+2025-10-07 15:06:14 [main] DEBUG c.p.M.A.getAllAdoptionRecords - ==> Parameters: 
+2025-10-07 15:06:14 [main] DEBUG c.p.M.A.getAllAdoptionRecords - <==      Total: 1
+2025-10-07 15:08:17 [main] DEBUG c.p.M.A.getAdoptionRecordsByPet - ==>  Preparing: SELECT * FROM adoption_record WHERE pet_id = ?
+2025-10-07 15:08:17 [main] DEBUG c.p.M.A.getAdoptionRecordsByPet - ==> Parameters: 11(Integer)
+2025-10-07 15:08:17 [main] DEBUG c.p.M.A.getAdoptionRecordsByPet - <==      Total: 1
+2025-10-07 15:12:00 [main] DEBUG c.p.Mapper.PetMapper.addPet - ==>  Preparing: INSERT INTO pet (name, species, age) VALUES (?, ?, ?)
+2025-10-07 15:12:00 [main] DEBUG c.p.Mapper.PetMapper.addPet - ==> Parameters: 11(String), 11(String), 11(Integer)
+2025-10-07 15:12:00 [main] DEBUG c.p.Mapper.PetMapper.addPet - <==    Updates: 1
+2025-10-07 15:12:58 [main] DEBUG c.p.Mapper.PetMapper.addPet - ==>  Preparing: INSERT INTO pet (name, species, age) VALUES (?, ?, ?)
+2025-10-07 15:12:58 [main] DEBUG c.p.Mapper.PetMapper.addPet - ==> Parameters: 1(String), 1(String), 1(Integer)
+2025-10-07 15:12:58 [main] DEBUG c.p.Mapper.PetMapper.addPet - <==    Updates: 1

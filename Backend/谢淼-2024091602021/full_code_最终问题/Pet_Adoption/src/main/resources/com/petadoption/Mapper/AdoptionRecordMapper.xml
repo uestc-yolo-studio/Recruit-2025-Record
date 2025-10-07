@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.petadoption.Mapper.AdoptionRecordMapper">
+    <select id="getAllAdoptionRecords" resultType="com.petadoption.entities.AdoptionRecord">
+        select * from adoption_record;
+    </select>
+    <insert id="adoptPet" parameterType="com.petadoption.entities.AdoptionRecord">
+        INSERT INTO adoption_record (adopter_id, pet_id,status)
+        VALUES (#{adopter_id}, #{pet_id}, #{status})
+    </insert>
+    <select id="getRecordById" parameterType="int" resultType="com.petadoption.entities.AdoptionRecord">
+        SELECT * FROM adoption_record WHERE id = #{id}
+    </select>
+    <update id="updateRecord" parameterType="com.petadoption.entities.AdoptionRecord">
+        UPDATE adoption_record
+        SET status = #{nowStatus}
+        WHERE id = #{id}
+    </update>
+    <select id="getAdoptionRecordsByPet" parameterType="int" resultType="com.petadoption.entities.AdoptionRecord">
+        SELECT * FROM adoption_record WHERE pet_id = #{pet_id}
+    </select>
+    <select id="getAdoptionRecordsByAdopter" parameterType="int" resultType="com.petadoption.entities.AdoptionRecord">
+        SELECT * FROM adoption_record WHERE adopter_id = #{adopter_id}
+    </select>
+</mapper>
