@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.petadoption.entities.AdoptionRecordDAO">
+    <!-- 结果映射 -->
+    <resultMap id="AdoptionRecordResultMap" type="com.petadoption.entities.AdoptionRecord">
+        <id property="id" column="id"/>
+        <result property="adoptionDate" column="adoption_date"/>
+        <!-- 关联Pet对象 -->
+        <association property="pet" javaType="com.petadoption.entities.Pet">
+            <id property="id" column="pet_id"/>
+            <result property="name" column="pet_name"/>
+            <result property="species" column="pet_species"/>
+            <result property="age" column="pet_age"/>
+            <result property="adoptStatus" column="pet_adopt_status"/>
+        </association>
+        <!-- 关联Adopter对象 -->
+        <association property="adopter" javaType="com.petadoption.entities.Adopter">
+            <id property="id" column="adopter_id"/>
+            <result property="name" column="adopter_name"/>
+            <result property="phone" column="adopter_phone"/>
+            <result property="address" column="adopter_address"/>
+        </association>
+    </resultMap>
+
+    <!-- 插入领养记录 -->
+    <insert id="insert" parameterType="com.petadoption.entities.AdoptionRecord">
+        INSERT INTO adoption_record (pet_id, adopter_id, adoption_date)
+        VALUES (#{pet.id}, #{adopter.id}, #{adoptionDate})
+    </insert>
+
+    <!-- 查询所有领养记录 -->
+    <select id="selectAll" resultMap="AdoptionRecordResultMap">
+        SELECT
+            ar.id,
+            ar.adoption_date,
+            p.id as pet_id,
+            p.name as pet_name,
+            p.species as pet_species,
+            p.age as pet_age,
+            p.adopt_status as pet_adopt_status,
+            a.id as adopter_id,
+            a.name as adopter_name,
+            a.phone as adopter_phone,
+            a.address as adopter_address
+        FROM adoption_record ar
+                 JOIN pet p ON ar.pet_id = p.id
+                 JOIN adopter a ON ar.adopter_id = a.id
+        ORDER BY ar.adoption_date DESC
+    </select>
+
+    <!-- 根据宠物ID查询领养记录 -->
+    <select id="selectByPetId" parameterType="int" resultMap="AdoptionRecordResultMap">
+        SELECT
+            ar.id,
+            ar.adoption_date,
+            p.id as pet_id,
+            p.name as pet_name,
+            p.species as pet_species,
+            p.age as pet_age,
+            p.adopt_status as pet_adopt_status,
+            a.id as adopter_id,
+            a.name as adopter_name,
+            a.phone as adopter_phone,
+            a.address as adopter_address
+        FROM adoption_record ar
+                 JOIN pet p ON ar.pet_id = p.id
+                 JOIN adopter a ON ar.adopter_id = a.id
+        WHERE ar.pet_id = #{petId}
+        ORDER BY ar.adoption_date DESC
+    </select>
+
+    <!-- 根据领养人ID查询领养记录 -->
+    <select id="selectByAdopterId" parameterType="int" resultMap="AdoptionRecordResultMap">
+        SELECT
+            ar.id,
+            ar.adoption_date,
+            p.id as pet_id,
+            p.name as pet_name,
+            p.species as pet_species,
+            p.age as pet_age,
+            p.adopt_status as pet_adopt_status,
+            a.id as adopter_id,
+            a.name as adopter_name,
+            a.phone as adopter_phone,
+            a.address as adopter_address
+        FROM adoption_record ar
+                 JOIN pet p ON ar.pet_id = p.id
+                 JOIN adopter a ON ar.adopter_id = a.id
+        WHERE ar.adopter_id = #{adopterId}
+        ORDER BY ar.adoption_date DESC
+    </select>
+</mapper>
