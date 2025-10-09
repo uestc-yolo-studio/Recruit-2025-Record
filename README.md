@@ -1,3 +1,1 @@
-markdown文件以章节来划分，包含文字阐述，代码以及遇到的问题
 
-assets文件夹中的SQLquestion和ExtendPicture已经放在了markdown里，不包含在question中
