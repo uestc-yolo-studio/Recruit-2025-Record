@@ -161,7 +161,7 @@ for i in range(100):
 plt.show()
 ```
 最后尝试题目  
-初始学习率设置过大，导致点不在函数上  
+点不在函数上。
 ![](../assets/question1/error.png)  
 调小学习率后输出正常  
 ![](../assets/question1/result.png)
