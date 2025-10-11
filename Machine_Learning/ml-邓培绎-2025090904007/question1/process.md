@@ -161,8 +161,13 @@ for i in range(100):
 plt.show()
 ```
 最后尝试题目  
-点不在函数上。
+点不在函数上。检查代码逻辑无果
 ![](../assets/question1/error.png)  
 调小学习率后输出正常  
 ![](../assets/question1/result.png)
 开始使用`append()`将点组合为点集，之后优化时发现可以直接在循环内绘制散点图。  
+随后进行附加题，写错索引，  
+![](../assets/question1/err1.png)
+改正后迭代五次与初始对比：  
+结果：  
+![](../assets/question1/run.png)
