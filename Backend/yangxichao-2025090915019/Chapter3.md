@@ -772,7 +772,7 @@ for(Ancester a : ancester){
 	+ ##### 懒汉式：
 
 		```java
-		//多线程不安全
+	//多线程不安全
 		public SingleIns{
 			private static SingleIns Instance;
 			private SingleIns(){
@@ -787,37 +787,37 @@ for(Ancester a : ancester){
 		}
 	```
 
-		```java
-		//多线程安全
-		public SingleIns{
-			private static SingleIns Instance;
-			private SingleIns(){
-			
-			}
-			//加锁，但效率降低
-			public static synchronized SingleIns getInstance(){
-				if(instance == null){
-					instance = new SingleIns();
-				}
-				return instance;
-			}
+	```java
+	//多线程安全
+	public SingleIns{
+		private static SingleIns Instance;
+		private SingleIns(){
+		
 		}
-		```
+		//加锁，但效率降低
+		public static synchronized SingleIns getInstance(){
+			if(instance == null){
+				instance = new SingleIns();
+			}
+			return instance;
+		}
+	}
+	```
 
 	+ ##### 饿汉式
 
-		```java
-		//常用，多线程安全，在类加载时就初始化，但没有达到延迟初始化的效果
-		public SingleIns{
-			private static SingleIns Instance = new SingleIns();
-			private SingleIns(){
-			
-			}
-			public static SingleIns getInstance(){
-				return instance;
-			}
+	```Java
+	//常用，多线程安全，在类加载时就初始化，但没有达到延迟初始化的效果
+	public SingleIns{
+		private static SingleIns Instance = new SingleIns();
+		private SingleIns(){
+		
 		}
-		```
+		public static SingleIns getInstance(){
+			return instance;
+		}
+	}
+	```
 
 	+ ##### 双重校验锁
 
