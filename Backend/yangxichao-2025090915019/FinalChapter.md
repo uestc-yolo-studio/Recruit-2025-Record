@@ -1,4 +1,6 @@
-[toc]
+
+
+<img src="assets/目录.png" style="zoom:150%;" />
 
 # 人生第一个项目：宠物领养中心
 
@@ -63,6 +65,7 @@ is_adopted TINYINT(1) DEFAULT 0
  FOREIGN KEY (pet_id) REFERENCES pets(pet_id),
  FOREIGN KEY (user_id) REFERENCES users(user_id)
   );
+
 ```
 
 ## 项目结构
