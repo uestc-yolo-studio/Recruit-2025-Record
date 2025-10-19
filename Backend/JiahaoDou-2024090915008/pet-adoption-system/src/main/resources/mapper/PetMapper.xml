@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.petadoption.mapper.PetMapper">
+
+    <insert id="addPet" useGeneratedKeys="true" keyProperty="id">
+         insert into pet(name,species,age,adopt_status,added_date)
+         values(#{name},#{species},#{age},#{adoptStatus},#{addedDate})
+    </insert>
+
+    <update id="updatePet">
+         update pet
+         set name=#{name},species=#{species},age=#{age},adopt_status=#{adoptStatus},added_date=#{addedDate}
+         where id=#{id}
+    </update>
+
+    <delete id="removePet">
+         delete from pet where id=#{id}
+    </delete>
+
+    <select id="getPetById" resultType="Pet">
+         select * from pet where id= #{id}
+    </select>
+
+    <select id="getAllPets"  resultType="Pet">
+          select * from pet
+    </select>
+
+    <select id="getAvailablePets" resultType="Pet">
+         select * from pet where adopt_status=0
+    </select>
+</mapper>

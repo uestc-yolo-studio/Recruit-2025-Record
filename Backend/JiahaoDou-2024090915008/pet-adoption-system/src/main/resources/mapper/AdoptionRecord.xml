@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.petadoption.mapper.AdoptionMapper">
+        <resultMap id="AdoptionMap" type="AdoptionRecord">
+              <result column="status" property="status"
+                    typeHandler="org.apache.ibatis.type.EnumTypeHandler"/>
+                <association property="pet" javaType="Pet">
+                        <id property="id" column="pet_id"/>
+                        <result property="name" column="pet_name"/>
+                        <result property="species" column="pet_species"/>
+                        <result property="age" column="pet_age"/>
+                        <result property="adoptStatus" column="pet_adopt_status"/>
+                        <result property="addedDate" column="pet_added_date"/>
+                </association>
+                <association property="adopter" javaType="Adopter">
+                        <id property="id" column="adopter_id"/>
+                        <result property="name" column="adopter_name"/>
+                        <result property="phone" column="adopter_phone"/>
+                        <result property="address" column="adopter_address"/>
+                        <result property="registrationDate" column="adopter_registration_date"/>
+                        <result property="hashedPassword" column="adopter_password"/>
+                </association>
+        </resultMap>
+    <insert id="addAdoptionRecord" useGeneratedKeys="true" keyProperty="id">
+         insert into adoption_record(adoption_date,pet_id,adopter_id,status)
+         values(#{adoptionDate},#{petId},#{adopterId},#{status,typeHandler=org.apache.ibatis.type.EnumTypeHandler})
+    </insert>
+
+    <select id="getAllAdoptionRecords" resultMap="AdoptionMap">
+                select a.id,
+                       a.adoption_date,
+                       a.status,
+                       p.id     as pet_id,
+                       p.name   as pet_name,
+                       p.species as pet_species,
+                       p.age    as pet_age,
+                       p.adopt_status as pet_adopt_status,
+                       p.added_date as pet_added_date,
+                       ad.id    as adopter_id,
+                       ad.name  as adopter_name,
+                       ad.phone as adopter_phone,
+                       ad.address as adopter_address,
+                       ad.registration_date as adopter_registration_date,
+                       ad.password as adopter_password
+                from adoption_record a join pet p on a.pet_id=p.id
+                                       join adopter ad on a.adopter_id=ad.id
+    </select>
+
+        <select id="getAdoptionRecordsByPet" resultMap="AdoptionMap">
+            select a.id,
+                   a.adoption_date,
+                   a.status,
+                   p.id     as pet_id,
+                   p.name   as pet_name,
+                   p.species as pet_species,
+                   p.age    as pet_age,
+                   p.adopt_status as pet_adopt_status,
+                   p.added_date as pet_added_date,
+                   ad.id    as adopter_id,
+                   ad.name  as adopter_name,
+                   ad.phone as adopter_phone,
+                   ad.address as adopter_address,
+                   ad.registration_date as adopter_registration_date,
+                   ad.password as adopter_password
+            from adoption_record a join pet p on a.pet_id=p.id
+                                   join adopter ad on a.adopter_id=ad.id
+                                   where pet_id=#{PetId}
+        </select>
+
+</mapper>

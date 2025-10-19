@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.petadoption.mapper.AdopterMapper">
+
+    <resultMap id="BaseResultMap" type="Adopter">
+          <result column="password" property="hashedPassword"/>
+    </resultMap>
+
+    <insert id="addAdopter" useGeneratedKeys="true" keyProperty="id">
+        insert into adopter(name,phone,address,registration_date,password)
+        values(#{name},#{phone},#{address},#{registrationDate},#{hashedPassword})
+    </insert>
+
+    <update id="updateAdopter">
+        <!--这里因为注册时间是不会修改的，永远都是创建的时间，故不再重复   -->
+        update adopter
+        set name=#{name},phone=#{phone},address=#{address},password=#{hashedPassword}
+        where id=#{id}
+    </update>
+
+    <delete id="removeAdopter">
+        delete from adopter where id=#{id}
+    </delete>
+
+    <select id="getAdopterById" resultMap="BaseResultMap">
+        select * from adopter where id=#{id}
+    </select>
+
+    <select id="getAllAdopters" resultMap="BaseResultMap">
+        select * from adopter
+    </select>
+</mapper>

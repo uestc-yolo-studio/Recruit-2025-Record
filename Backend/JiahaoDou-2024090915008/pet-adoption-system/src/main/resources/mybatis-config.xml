@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 1. 全局属性 -->
+    <properties resource="db.properties"/>
+
+    <!-- 2. 全局设置 -->
+    <settings>
+        <!-- 下划线转驼峰 -->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+        <!-- 打印 SQL -->
+        <setting name="logPrefix" value="mybatis."/>
+        <!-- 二级缓存总开关 -->
+        <setting name="cacheEnabled" value="true"/>
+    </settings>
+
+    <!-- 3. 别名 -->
+    <typeAliases>
+        <package name="com.petadoption.entities"/>
+    </typeAliases>
+
+    <!-- 4. 环境 = 数据源 + 事务 -->
+    <environments default="dev">
+        <environment id="dev">
+            <transactionManager type="JDBC"/>
+            <dataSource type="com.petadoption.config.HikariDataSourceFactory"/>
+        </environment>
+    </environments>
+
+    <!-- 5. 映射文件 -->
+    <mappers>
+        <mapper resource="mapper/AdopterMapper.xml"/>
+        <mapper resource="mapper/PetMapper.xml"/>
+        <mapper resource="mapper/AdoptionRecord.xml"/>
+    </mappers>
+</configuration>
