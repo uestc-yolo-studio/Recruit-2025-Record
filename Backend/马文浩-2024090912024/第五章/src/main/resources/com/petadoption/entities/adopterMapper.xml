@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.petadoption.entities.AdopterDAO">
+    <!-- 结果映射 -->
+    <resultMap id="AdopterResultMap" type="com.petadoption.entities.Adopter">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="phone" column="phone"/>
+        <result property="address" column="address"/>
+        <result property="password" column="password"/>
+        <result property="registrationDate" column="registration_date"/>
+    </resultMap>
+
+    <!-- 插入领养人 -->
+    <insert id="insert" parameterType="com.petadoption.entities.Adopter">
+        INSERT INTO adopter (name, phone, address, password, registration_date)
+        VALUES (#{name}, #{phone}, #{address}, #{password}, #{registrationDate})
+    </insert>
+
+    <!-- 更新领养人 -->
+    <update id="update" parameterType="com.petadoption.entities.Adopter">
+        UPDATE adopter SET
+                           name = #{name},
+                           phone = #{phone},
+                           address = #{address},
+                           password = #{password}
+        WHERE id = #{id}
+    </update>
+
+    <!-- 删除领养人 -->
+    <delete id="delete" parameterType="int">
+        DELETE FROM adopter WHERE id = #{id}
+    </delete>
+
+    <!-- 根据ID查询领养人 -->
+    <select id="selectById" parameterType="int" resultMap="AdopterResultMap">
+        SELECT * FROM adopter WHERE id = #{id}
+    </select>
+
+    <!-- 查询所有领养人 -->
+    <select id="selectAll" resultMap="AdopterResultMap">
+        SELECT * FROM adopter
+    </select>
+</mapper>

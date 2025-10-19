@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.petadoption.entities.PetDAO">
+    <resultMap id="PetResultMap" type="com.petadoption.entities.Pet">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="species" column="species"/>
+        <result property="age" column="age"/>
+        <result property="adoptStatus" column="adopt_status"/>
+        <result property="addedDate" column="added_date"/>
+    </resultMap>
+
+    <insert id="insert" parameterType="com.petadoption.entities.Pet">
+        INSERT INTO pet (name, species, age, adopt_status, added_date)
+        VALUES (#{name}, #{species}, #{age}, #{adoptStatus}, #{addedDate})
+    </insert>
+
+    <update id="update" parameterType="com.petadoption.entities.Pet">
+        UPDATE pet SET
+                       name = #{name},
+                       species = #{species},
+                       age = #{age},
+                       adopt_status = #{adoptStatus}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM pet WHERE id = #{id}
+    </delete>
+
+    <select id="selectById" parameterType="int" resultMap="PetResultMap">
+        SELECT * FROM pet WHERE id = #{id}
+    </select>
+
+    <select id="selectAll" resultMap="PetResultMap">
+        SELECT * FROM pet
+    </select>
+</mapper>
