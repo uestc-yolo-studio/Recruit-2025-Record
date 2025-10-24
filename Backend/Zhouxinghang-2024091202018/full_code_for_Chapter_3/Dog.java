@@ -39,7 +39,7 @@ public class Dog extends Canine{
 
     @Override
     public String toString() {
-        return "Dog{}" +
+        return "Dog{" +
                 "name=" + getName() +
                 ",age=" + getAge() +
                 ", weight=" + getWeight() +
