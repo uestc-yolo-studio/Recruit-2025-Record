@@ -34,7 +34,7 @@ public class Cat extends Feline{
 
     @Override
     public String toString() {
-        return "Cat{}" +
+        return "Cat{" +
                 "name=" + getName() +
                 ",age=" + getAge() +
                 ", weight=" + getWeight() +

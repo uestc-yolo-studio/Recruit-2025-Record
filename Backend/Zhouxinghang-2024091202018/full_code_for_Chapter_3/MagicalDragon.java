@@ -2,7 +2,7 @@ package com.yolo3;
 
 public class MagicalDragon extends Pet implements Flyable,Healable{
     //枚举元素属性
-    enum element{light, darkness, water, fire}
+    public enum element{light, darkness, water, fire}
 
     //魔龙是否有双翼
     private boolean haveWing;
